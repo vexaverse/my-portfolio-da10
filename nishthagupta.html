@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0d14">
+  <meta name="description" content="Portfolio of a first-year B.Tech Computer Science and Engineering student specializing in Cybersecurity.">
+  <title>Nishtha Gupta | Cybersecurity &amp; CSE</title>
+
+  <style>
+    :root {
+      --bg: #090c12;
+      --panel: #101621;
+      --panel2: #141d2b;
+      --text: #eef3ff;
+      --muted: #9aa8bd;
+      --line: #253247;
+      --cyan: #76f7dc;
+      --violet: #a9a2ff;
+      --pink: #ff9bd2;
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 80% 0%, #1c2140 0, transparent 34%),
+        radial-gradient(ellipse at 0% 35%, #102b30 0, transparent 30%),
+        var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1100px, calc(100% - 40px)); margin: auto; }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 23px 0;
+      border-bottom: 1px solid #ffffff12;
+      position: relative;
+    }
+
+    .logo { font-family: var(--mono); font-weight: 700; letter-spacing: -.05em; }
+    .logo span { color: var(--cyan); }
+    .navlinks { display: flex; gap: 24px; color: var(--muted); font-size: .88rem; }
+    .navlinks a:hover, .textlink:hover { color: var(--cyan); }
+
+    .pill {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 13px;
+      font-size: .78rem;
+      color: var(--cyan);
+      font-family: var(--mono);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      background: var(--cyan);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--cyan);
+    }
+
+    .hero {
+      min-height: 590px;
+      display: grid;
+      grid-template-columns: 1.35fr .65fr;
+      align-items: center;
+      gap: 45px;
+      padding: 76px 0 85px;
+    }
+
+    .eyebrow {
+      font: .82rem var(--mono);
+      color: var(--cyan);
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.7rem, 6vw, 5.2rem);
+      line-height: 1.03;
+      letter-spacing: -.065em;
+      margin: 22px 0;
+    }
+
+    .hero h1 em { font-style: normal; color: var(--cyan); }
+    .hero p { max-width: 620px; color: var(--muted); font-size: 1.05rem; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+
+    .btn {
+      padding: 12px 17px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      font-weight: 650;
+      font-size: .9rem;
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      transition: .2s;
+    }
+
+    .btn.primary { background: var(--cyan); color: #06100f; border-color: var(--cyan); }
+    .btn:hover { transform: translateY(-2px); }
+
+    .terminal {
+      background: #0c111b;
+      border: 1px solid #2a3a4e;
+      border-radius: 18px;
+      box-shadow: 0 20px 70px #0006;
+      overflow: hidden;
+      transform: rotate(1.5deg);
+    }
+
+    .termhead {
+      padding: 13px 16px;
+      border-bottom: 1px solid #243044;
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .orb { width: 9px; height: 9px; border-radius: 50%; background: #ff7f88; }
+    .orb:nth-child(2) { background: #ffd477; }
+    .orb:nth-child(3) { background: #7af0ba; }
+    .termname { font: .7rem var(--mono); color: var(--muted); margin-left: auto; }
+    .termcontent { padding: 24px 20px; font: .82rem/2 var(--mono); color: #b8c7dc; }
+    .termcontent .green { color: var(--cyan); }
+    .termcontent .violet { color: var(--violet); }
+    .termcontent .pink { color: var(--pink); }
+    .termcontent .indent { padding-left: 18px; }
+
+    .section { padding: 70px 0; border-top: 1px solid #ffffff12; }
+    .sectionhead {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .kicker { font: .75rem var(--mono); color: var(--cyan); letter-spacing: .1em; }
+    .section h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -.045em; line-height: 1.2; margin: 7px 0; }
+    .sub { color: var(--muted); max-width: 560px; margin: 0; }
+
+    .aboutgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+    .card {
+      background: linear-gradient(145deg, #131b29dd, #0f141eee);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .card h3 { margin: 0 0 10px; font-size: 1.05rem; }
+    .card p { margin: 0; color: var(--muted); }
+    .quote { font-size: 1.35rem; letter-spacing: -.025em; line-height: 1.5; }
+    .quote span { color: var(--cyan); }
+
+    .skillgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .skill { padding: 20px; border: 1px solid var(--line); border-radius: 14px; background: #101621bb; }
+    .skill .symbol { font: 1.15rem var(--mono); color: var(--cyan); }
+    .skill h3 { margin: 10px 0 6px; }
+    .skill p { margin: 0; color: var(--muted); font-size: .9rem; }
+
+    .tags { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 14px; }
+    .tag {
+      font: .72rem var(--mono);
+      padding: 5px 8px;
+      border-radius: 6px;
+      background: #1b2735;
+      color: #c4d5e9;
+      border: 1px solid #2a394d;
+    }
+
+    /* Bento-style projects layout */
+    .projectgrid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-auto-rows: minmax(250px, auto);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .project {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      height: 100%;
+      transition: transform .22s ease, border-color .22s ease;
+    }
+
+    .project:hover { transform: translateY(-4px); border-color: #456078; }
+
+    .project::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan), var(--violet), transparent);
+    }
+
+    .project.featured {
+      grid-column: auto;
+      grid-row: auto;
+      min-height: 250px;
+      background:
+        radial-gradient(ellipse at 100% 0%, #1e3543aa, transparent 48%),
+        linear-gradient(145deg, #131b29ee, #0f141eee);
+    }
+
+    .projecttop { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 17px; }
+    .projecticon { font-size: 1.5rem; }
+    .status {
+      font: .68rem var(--mono);
+      color: var(--cyan);
+      border: 1px solid #2a655b;
+      border-radius: 100px;
+      padding: 4px 8px;
+      white-space: nowrap;
+    }
+
+    .project p { color: var(--muted); font-size: .92rem; }
+    .project .tags { margin-bottom: 18px; }
+
+    .textlink {
+      color: var(--cyan);
+      font: .78rem var(--mono);
+      display: inline-block;
+      margin-top: auto;
+      padding-top: 14px;
+      align-self: flex-start;
+    }
+
+    .journey { display: grid; grid-template-columns: 150px 1fr; gap: 20px; padding: 20px 0; border-bottom: 1px solid #ffffff12; }
+    .journey time { font: .78rem var(--mono); color: var(--cyan); }
+    .journey h3 { margin: 0 0 5px; font-size: 1rem; }
+    .journey p { margin: 0; color: var(--muted); font-size: .92rem; }
+
+    .contactbox {
+      border: 1px solid #334557;
+      border-radius: 20px;
+      padding: clamp(25px, 5vw, 50px);
+      background: radial-gradient(ellipse at 100% 0%, #25314c, transparent 50%), #101621;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .contactbox h2 { font-size: clamp(1.8rem, 4vw, 3rem); margin: 8px 0; letter-spacing: -.05em; }
+    .contactbox p { color: var(--muted); max-width: 490px; }
+    .footer { padding: 28px 0; color: var(--muted); font: .75rem var(--mono); display: flex; justify-content: space-between; gap: 15px; }
+    .note { font-size: .8rem; color: #77869b; margin-top: 22px; }
+    .editable { outline: none; border-radius: 4px; }
+    .editable:focus { box-shadow: 0 0 0 2px #76f7dc66; }
+
+    @media (max-width: 900px) {
+      .projectgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: minmax(220px, auto); }
+      .project.featured { grid-column: auto; grid-row: auto; min-height: 220px; }
+    }
+
+    @media (max-width: 760px) {
+      .navlinks { gap: 12px; font-size: .78rem; }
+      .navlinks a:nth-child(2), .navlinks a:nth-child(3) { display: none; }
+      .hero { grid-template-columns: 1fr; padding: 62px 0; gap: 35px; min-height: auto; }
+      .terminal { max-width: 500px; width: 100%; transform: none; }
+      .aboutgrid { grid-template-columns: 1fr; }
+      .skillgrid { grid-template-columns: 1fr 1fr; }
+      .section { padding: 54px 0; }
+      .contactbox { align-items: flex-start; flex-direction: column; }
+      .journey { grid-template-columns: 1fr; gap: 5px; }
+      .footer { flex-direction: column; }
+    }
+
+    @media (max-width: 600px) {
+      .projectgrid { grid-template-columns: 1fr; grid-auto-rows: auto; }
+      .project.featured { grid-column: auto; min-height: 0; }
+      .project { min-height: 210px; }
+    }
+
+    @media (max-width: 430px) {
+      .wrap { width: calc(100% - 28px); }
+      .navlinks { gap: 10px; }
+      .navlinks a:nth-child(4) { display: none; }
+      .hero h1 { font-size: 2.65rem; }
+      .skillgrid { grid-template-columns: 1fr; }
+      .sectionhead { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="wrap nav">
+    <a class="logo" href="#home">ng<span>.</span></a>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="#about">about</a>
+      <a href="#skills">skills</a>
+      <a href="#projects">projects</a>
+      <a href="#journey">journey</a>
+      <a href="#contact">contact ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="wrap hero" id="home">
+      <div>
+        <div class="pill"><span class="dot"></span> OPEN TO LEARNING &amp; COLLABORATION</div>
+        <div class="eyebrow" style="margin-top:27px">HELLO, WORLD! I'M</div>
+        <h1 class="editable" spellcheck="false">Nishtha<br><em>Gupta.</em></h1>
+        <p class="editable" spellcheck="true">A first-year B.Tech student in Computer Science &amp; Engineering (Cybersecurity), exploring how technology works — and how to make it safer.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore my work <span>↘</span></a>
+          <a class="btn" href="#contact">Let's connect <span>↗</span></a>
+        </div>
+        <div class="note">CURRENTLY: learning, building, breaking things (ethically), and learning again.</div>
+      </div>
+
+      <div class="terminal" aria-label="Decorative code terminal">
+        <div class="termhead">
+          <i class="orb"></i><i class="orb"></i><i class="orb"></i>
+          <span class="termname">nishtha@portfolio ~</span>
+        </div>
+        <div class="termcontent">
+          <div><span class="green">➜</span> who am i?</div>
+          <div class="indent"><span class="violet">student</span> / problem-solver</div>
+          <div><span class="green">➜</span> tech interests.txt</div>
+          <div class="indent">cybersecurity</div>
+          <div class="indent">software development</div>
+          <div class="indent">learning by building</div>
+          <div><span class="green">➜</span> <span class="pink">python</span> --version</div>
+          <div class="indent">Learning in progress...</div>
+          <div style="margin-top:14px"><span class="green">➜</span> curious learner</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="sectionhead">
+          <div>
+            <div class="kicker">01 / THE PERSON BEHIND THE CODE</div>
+            <h2>A little about me.</h2>
+          </div>
+        </div>
+        <div class="aboutgrid">
+          <div class="card">
+            <h3>Curious by default.</h3>
+            <p class="editable" spellcheck="true">I'm at the beginning of my engineering journey, building a strong foundation in programming and computer science. I'm especially curious about cybersecurity, digital privacy, and the ways we can make technology more reliable.</p>
+          </div>
+          <div class="card">
+            <div class="quote">“Build with curiosity.<br><span>Secure with intention.</span>”</div>
+            <p style="margin-top:17px">My goal: keep learning, create useful things, and become a thoughtful engineer.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="wrap">
+        <div class="sectionhead">
+          <div>
+            <div class="kicker">02 / MY TOOLKIT</div>
+            <h2>Skills I'm growing.</h2>
+            <p class="sub">A snapshot of my current learning.</p>
+          </div>
+        </div>
+        <div class="skillgrid">
+          <div class="skill">
+            <div class="symbol">01 / code</div>
+            <h3>Programming</h3>
+            <p>Building logic and learning to write clean, readable code.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">C / C++</span></div>
+          </div>
+          <div class="skill">
+            <div class="symbol">02 / shield</div>
+            <h3>Aspiring cybersecurity professional</h3>
+            <p>Exploring the fundamentals of secure systems and digital safety.</p>
+            <div class="tags"><span class="tag">Security basics</span><span class="tag">Networking</span></div>
+          </div>
+          <div class="skill">
+            <div class="symbol">03 / tools</div>
+            <h3>Developer tools</h3>
+            <p>Getting comfortable with the tools used to build and share projects.</p>
+            <div class="tags"><span class="tag">Git &amp; GitHub</span><span class="tag">VS Code</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="wrap">
+        <div class="sectionhead">
+          <div>
+            <div class="kicker">03 / THINGS I'M BUILDING</div>
+            <h2>Selected projects.</h2>
+            <p class="sub">Projects in progress — update these details as your work develops.</p>
+          </div>
+        </div>
+
+        <div class="projectgrid">
+          <article class="card project featured">
+            <div class="projecttop">
+              <span class="projecticon">⌘</span>
+              <span class="status">IN PROGRESS</span>
+            </div>
+            <h3>Healthcare Management System</h3>
+            <p>A Python project concept for organizing patient records, appointments, and basic healthcare workflows.</p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Database concepts</span>
+              <span class="tag">Team project</span>
+            </div>
+          </article>
+
+          <article class="card project">
+            <div class="projecttop">
+              <span class="projecticon">⌁</span>
+              <span class="status">IN PROGRESS</span>
+            </div>
+            <h3>Triboelectric Nanogenerator</h3>
+            <p>A college project exploring how contact electrification can generate electrical output to light an LED.</p>
+            <div class="tags">
+              <span class="tag">Energy harvesting</span>
+              <span class="tag">Electronics</span>
+              <span class="tag">Team project</span>
+            </div>
+          </article>
+
+          <article class="card project">
+            <div class="projecttop">
+              <span class="projecticon">⌬</span>
+              <span class="status">PLANNED</span>
+            </div>
+            <h3>Cybersecurity Learning Lab</h3>
+            <p>A collection of notes and write-ups from beginner-friendly, authorized labs and CTF exercises.</p>
+            <div class="tags">
+              <span class="tag">Linux</span>
+              <span class="tag">Networking</span>
+              <span class="tag">CTF</span>
+            </div>
+          </article>
+
+          <article class="card project">
+            <div class="projecttop">
+              <span class="projecticon">▤</span>
+              <span class="status">COMING SOON</span>
+            </div>
+            <h3>More projects</h3>
+            <p>Small experiments count. Document the problem, your approach, what worked, and what you'd improve next.</p>
+            <div class="tags">
+              <span class="tag">Learn</span>
+              <span class="tag">Build</span>
+              <span class="tag">Improve</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="journey">
+      <div class="wrap">
+        <div class="sectionhead">
+          <div>
+            <div class="kicker">04 / THE PROCESS</div>
+            <h2>My learning journey.</h2>
+            <p class="sub">Progress over perfection.</p>
+          </div>
+        </div>
+        <div class="journey">
+          <time>NOW / 2026</time>
+          <div><h3>Building the foundations</h3><p>Learning programming, core computer science concepts, and cybersecurity fundamentals as a first-year student.</p></div>
+        </div>
+        <div class="journey">
+          <time>NEXT</time>
+          <div><h3>Practice through projects</h3><p>Turn concepts into small, documented projects and get more comfortable collaborating with others.</p></div>
+        </div>
+        <div class="journey">
+          <time>ONGOING</time>
+          <div><h3>Stay curious</h3><p>Explore new tools, learn from feedback, and keep a record of what each project teaches me.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="wrap">
+        <div class="contactbox">
+          <div>
+            <div class="kicker">05 / SAY HELLO</div>
+            <h2>Have an idea?<br>Let's build it.</h2>
+            <p>I'm always happy to learn with others, explore student projects, and connect with people who love technology.</p>
+            <div class="actions">
+              <!-- Replace this email with the address you want to display. -->
+              <a class="btn primary" id="emailLink" href="mailto:nishtha.gupta2026@gmail.com">Email me ↗</a>
+              <!-- Replace the GitHub URL with your own profile link. -->
+              <a class="btn" id="githubLink" href="https://github.com/vexaverse" target="_blank" rel="noreferrer">GitHub ↗</a>
+              <!-- Replace this with your LinkedIn profile URL, or remove the button if you don't have one. -->
+              <a class="btn" id="linkedinLink" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            </div>
+          </div>
+          <div class="pill">MADE WITH CURIOSITY <span style="color:var(--pink)">♥</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <span>© <span id="year"></span> Nishtha Gupta</span>
+    <span>Curiosity is a feature, not a bug.</span>
+    <a href="#home">BACK TO TOP ↑</a>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
